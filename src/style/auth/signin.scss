@@ -5,8 +5,10 @@
 //    &__form {
 
     //}
-//}
+}
 
-//.sign-in-form {
-
+.sign-in-form {
+    &__line {
+        border-top: 1px solid #ccc;
+    }
 }
