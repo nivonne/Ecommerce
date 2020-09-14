@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import PageTitle from './pageTitle';
-import Purchases from '../components/account/purchases';
-import PurchaseDetail from '../components/account/purchaseDetail';
+
+import PageTitle from '../pageTitle';
+import Purchases from './purchases';
+import PurchaseDetail from './purchaseDetail';
 
 class PurchaseHistory extends Component {
     render() {
@@ -17,4 +18,5 @@ class PurchaseHistory extends Component {
         )
     }
 }
+
 export default PurchaseHistory;

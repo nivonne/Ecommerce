@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import AccountInformation from './accountInformation';
-import PurchaseHistory from '../../components/purchaseHistory';
+import PurchaseHistory from './purchaseHistory';
 
 class Account extends Component {
     componentDidMount() {
