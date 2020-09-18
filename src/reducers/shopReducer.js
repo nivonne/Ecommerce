@@ -2,8 +2,8 @@ import { SET_SHOP_CATEGORIES, SET_SHOP_PRODUCTS, FILTER_PRODUCTS_WITH_CATEGORY_I
 
 const INITIAL_STATE = {
     categories: [],
-    productsSelected: [],
-    products: []
+    products: [],
+    filteredProducts: []
 }
 
 export default function(state = INITIAL_STATE, action) {
@@ -14,17 +14,22 @@ export default function(state = INITIAL_STATE, action) {
                 ...state,
                 categories
             }
-            case SET_SHOP_PRODUCTS:
-                return {
-                    ...state,
-                    products: action.payload
+        case SET_SHOP_PRODUCTS:
+            return {
+                ...state,
+                products: action.payload
+            }
+        case FILTER_PRODUCTS_WITH_CATEGORY_ID:
+            var filteredProducts = [];
+            state.products.map(product => {
+                if(product.belongsTo.includes(action.payload)) {
+                    filteredProducts.push(product);
                 }
-            case FILTER_PRODUCTS_WITH_CATEGORY_ID:
-                console.log(action.payload);
-                return {
-                    ...state,
-                    // selectedCategoryId
-                }
-            default: return state;
+            })
+            return {
+                ...state,
+                filteredProducts
+            }
+        default: return state;
     }
 } 
